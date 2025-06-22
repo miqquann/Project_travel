@@ -32,11 +32,12 @@ jobs:
 
     - name: Run SonarQube Scanner
       uses: sonarsource/sonarcloud-github-action@v2
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         args: >
           -Dsonar.projectKey=ProjectSWP
           -Dsonar.sources=src/java
           -Dsonar.java.binaries=build/web/WEB-INF/classes
-          -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.organization=miqquann
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.host.url=https://sonarcloud.io
