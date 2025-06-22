@@ -36,7 +36,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         args: >
-          -Dsonar.projectKey=ProjectSWP
+          -Dsonar.projectKey=miqquann_Project_travel
           -Dsonar.sources=ProjectSWP/src/java
           -Dsonar.java.binaries=build/web/WEB-INF/classes
           -Dsonar.organization=miqquann
