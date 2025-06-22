@@ -28,7 +28,7 @@ jobs:
         restore-keys: ${{ runner.os }}-sonar
 
     - name: Build with Ant
-      run: ant
+      run: ant -buildfile ProjectSWP/build.xml
 
     - name: Run SonarQube Scanner
       uses: sonarsource/sonarcloud-github-action@v2
