@@ -71,7 +71,6 @@
     <target name="-pre-compile">
     <mkdir dir="${build.classes.dir}"/>
     <javac includeantruntime="false"
-           compilerargs="-Xlint:unchecked"
            srcdir="${src.dir}"
            destdir="${build.classes.dir}">
         <classpath>
@@ -82,4 +81,5 @@
         </classpath>
     </javac>
     </target>
+
 </project>
