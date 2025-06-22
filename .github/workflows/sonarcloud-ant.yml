@@ -35,7 +35,7 @@ jobs:
           sonar-scanner \
             -Dsonar.projectKey=miqquann_Project_travel \
             -Dsonar.organization=miqquann \
-            -Dsonar.sources=src \
+            -Dsonar.sources=ProjectSWP/src \
             -Dsonar.java.binaries=build/classes \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=$SONAR_TOKEN
