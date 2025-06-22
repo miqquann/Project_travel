@@ -38,5 +38,5 @@ jobs:
           -Dsonar.sources=src/java
           -Dsonar.java.binaries=build/web/WEB-INF/classes
           -Dsonar.host.url=https://sonarcloud.io
-          -Dsonar.organization=<tên_organization>
+          -Dsonar.organization=miqquann
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
