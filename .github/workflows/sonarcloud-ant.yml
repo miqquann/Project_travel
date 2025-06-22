@@ -37,7 +37,7 @@ jobs:
       with:
         args: >
           -Dsonar.projectKey=ProjectSWP
-          -Dsonar.sources=src/java
+          -Dsonar.sources=ProjectSWP/src/java
           -Dsonar.java.binaries=build/web/WEB-INF/classes
           -Dsonar.organization=miqquann
           -Dsonar.host.url=https://sonarcloud.io
