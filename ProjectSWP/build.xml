@@ -69,10 +69,15 @@
 
     -->
     <target name="-pre-compile">
-        <mkdir dir="${build.classes.dir}"/>
-        <javac includeantruntime="false"
-               srcdir="${src.dir}"
-               destdir="${build.classes.dir}"
-               classpath="lib/jakarta.servlet-api-5.0.0.jar"/>
+    <mkdir dir="${build.classes.dir}"/>
+    <javac includeantruntime="false"
+           srcdir="${src.dir}"
+           destdir="${build.classes.dir}">
+        <classpath>
+            <pathelement path="lib/jakarta.servlet-api-5.0.0.jar"/>
+            <pathelement path="lib/jakarta.mail-2.0.1.jar"/>
+        </classpath>
+    </javac>
     </target>
+
 </project>
