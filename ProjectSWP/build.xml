@@ -1,25 +1,34 @@
-<project name="ProjectSWP" default="default" basedir=".">
-    <description>Builds the project ProjectSWP.</description>
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ProjectSWP" default="build" basedir=".">
+    
+    <!-- === Properties === -->
+    <property name="src.dir" location="src/java"/>
+    <property name="build.dir" location="build"/>
+    <property name="classes.dir" location="${build.dir}/web/WEB-INF/classes"/>
+    <property name="lib.dir" location="lib"/>
 
-    <!-- Define directory locations -->
-    <property name="src.dir" value="src/java"/>
-    <property name="build.classes.dir" value="build/web/WEB-INF/classes"/>
-    <property name="lib.dir" value="lib"/>
-
+    <!-- === Clean Task === -->
     <target name="clean">
-        <delete dir="${build.classes.dir}" />
+        <echo>Cleaning build directory...</echo>
+        <delete dir="${build.dir}" />
     </target>
 
+    <!-- === Compile Java Classes === -->
     <target name="compile">
-        <mkdir dir="${build.classes.dir}" />
-        <javac srcdir="${src.dir}" destdir="${build.classes.dir}" includeantruntime="false">
+        <echo>Compiling Java source files...</echo>
+        <mkdir dir="${classes.dir}" />
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" includeantruntime="false" encoding="UTF-8">
             <classpath>
                 <fileset dir="${lib.dir}">
-                    <include name="**/*.jar" />
+                    <include name="**/*.jar"/>
                 </fileset>
             </classpath>
         </javac>
     </target>
 
-    <target name="default" depends="clean, compile" />
+    <!-- === Default Build === -->
+    <target name="build" depends="clean, compile">
+        <echo>Build completed successfully.</echo>
+    </target>
+
 </project>
