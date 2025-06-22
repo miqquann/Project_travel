@@ -21,6 +21,15 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Install Ant
+        run: sudo apt-get update && sudo apt-get install -y ant
+
+      - name: Build project using Ant
+        run: |
+          cd ProjectSWP
+          ant clean
+          ant
+
       - name: Download Sonar Scanner CLI
         run: |
           wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
