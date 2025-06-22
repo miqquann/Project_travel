@@ -27,22 +27,16 @@ jobs:
         key: ${{ runner.os }}-sonar
         restore-keys: ${{ runner.os }}-sonar
 
-    - name: Set up SonarScanner
-      uses: sonarsource/sonarcloud-github-action@v2
-      with:
-        scanner-version: 'latest'
-
     - name: Build with Ant
       run: ant
 
     - name: Run SonarQube Scanner
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: |
-        sonar-scanner \
-          -Dsonar.projectKey=ProjectSWP \
-          -Dsonar.sources=src/java \
-          -Dsonar.java.binaries=build/web/WEB-INF/classes \
-          -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.organization=<tên_organization> \
-          -Dsonar.login=$SONAR_TOKEN
+      uses: sonarsource/sonarcloud-github-action@v2
+      with:
+        args: >
+          -Dsonar.projectKey=ProjectSWP
+          -Dsonar.sources=src/java
+          -Dsonar.java.binaries=build/web/WEB-INF/classes
+          -Dsonar.host.url=https://sonarcloud.io
+          -Dsonar.organization=<tên_organization>
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
