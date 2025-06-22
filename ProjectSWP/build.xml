@@ -76,8 +76,11 @@
         <classpath>
             <pathelement path="lib/jakarta.servlet-api-5.0.0.jar"/>
             <pathelement path="lib/jakarta.mail-2.0.1.jar"/>
+            <pathelement path="lib/gson-2.10.1.jar"/>
+            <pathelement path="lib/json-20231013.jar"/>
         </classpath>
     </javac>
     </target>
+
 
 </project>
