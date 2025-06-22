@@ -38,6 +38,6 @@ jobs:
         args: >
           -Dsonar.projectKey=miqquann_Project_travel
           -Dsonar.sources=ProjectSWP/src/java
-          -Dsonar.java.binaries=build/web/WEB-INF/classes
+          -Dsonar.java.binaries=ProjectSWP/build/web/WEB-INF/classes
           -Dsonar.organization=miqquann
           -Dsonar.host.url=https://sonarcloud.io
